@@ -12,9 +12,29 @@ fun main(args: Array<String>) {
     val argB = args[1].toIntOrNull() ?: 0
 
     printSum(a = argA, b = argB)
+
+    /**
+     * Read-only local variables are defined using the keyword val. They can be assigned a value only once.
+     */
+    val a: Int = 1  // immediate assignment
+    val b = 2   // `Int` type is inferred
+    val c: Int  // Type required when no initializer is provided
+    c = 3       // deferred assignment
+
+    /**
+     * Variables that can be reassigned use the var keyword.
+     */
+    var x = 5 // `Int` type is inferred
+    x += 1
 }
 
-// A function with two Int parameters and Int return type.
+// You can declare variables at the top level.
+val PI = 3.14
+var _x = 0
+
+/**
+ * A function with two Int parameters and Int return type.
+ */
 fun sum(a: Int, b: Int): Int {
     return a + b
 }
@@ -26,4 +46,8 @@ fun sum(a: Int, b: Int): Int {
  **/
 fun printSum(a: Int, b: Int): Unit {
     println("sum of $a and $b is ${a + b}")
+}
+
+fun incrementX() {
+    _x += 1
 }
